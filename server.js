@@ -15,11 +15,11 @@ const app = new express()
 const server = new http.Server(app)
 
 const index = fs.readFileSync('build/index.html', 'utf8')
-
+//html是通过htmlWebpackPlugin来完成的
 const PORT = process.env.PORT || 8000
-
 // Serve static files
 app.use(express.static('build'))
+//设置静态文件的目录
 
 // Proxy API calls to API server
 //const proxy = http_proxy.createProxyServer({ target: 'http://localhost:xxxx' })
@@ -28,6 +28,7 @@ app.use(express.static('build'))
 // React application rendering
 app.use((req, res) => {
 	// Match current URL to the corresponding React page
+	// req.url必须是完整的URL，包含hash和query等
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
 		if (error) {
 			res.status(500).send(error.message);
@@ -36,10 +37,12 @@ app.use((req, res) => {
 		} else if (renderProps) {
 			res.status(200)
 			var react_stuff = renderToString(<RouterContext {...renderProps} />);
+			//renderProps传递给RouterContext
 			var c =  index.replace(
 				/<div id="root"><\/div>/,
 				'<div id="root">' + react_stuff + '</div>'
 			);
+			//将root中在服务端填充内容
 			console.log(c);
 			res.send(c);
 		} else {

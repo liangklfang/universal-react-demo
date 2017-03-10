@@ -12,6 +12,7 @@ class Complex extends Component {
                                 <h2> This page has nested routes! </h2>
                                 <SubviewNav/>
 				{ this.props.children }
+		    	{/*this.props.children表示的是通过配置path为'complex'的组件开始的*/}
 			</div>
 		)
 	}

@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --hot --progress --host 0.0.0.0 --port 8000 --config webpack.client.config.js",
-    "server-build": "export NODE_ENV=prod; webpack -p --progress --config webpack.server.config.js",
-    "client-build": "export NODE_ENV=prod; webpack -p --progress --config webpack.client.config.js",
+    "server-build": " webpack -p --progress --config webpack.server.config.js",
+    "client-build": " webpack -p --progress --config webpack.client.config.js",
     "start": "concurrently \"npm run client-build\" \"npm run server-build\" && node build/server.js"
   },
   "repository": {

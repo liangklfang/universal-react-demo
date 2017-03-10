@@ -16,6 +16,7 @@ module.exports = {
 		extensions: ['.js', '.jsx']
 	},
 	entry: path.join(__dirname, 'server.js') ,
+	//入口文件是server.js，而且target是'node'
 	output: {
 		path: path.join(__dirname, './build'),
 		filename: 'server.js',
