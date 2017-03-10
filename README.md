@@ -15,6 +15,7 @@ module.exports = {
 }
 ```
 
+System.import和require.ensure是一样的效果，前者是ES6特性，也是为了[按需加载](https://webpack.js.org/guides/code-splitting-import/#components/sidebar/sidebar.jsx)而生的！
 
 ###2.我们在webpack.config.js中使用plugin来定义变量
 

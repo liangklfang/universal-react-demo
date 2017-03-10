@@ -1,7 +1,6 @@
 module.exports = {
 	path: 'home',
 	getComponent(nextState, cb) {
-        console.log('Home组件:',nextState);
 		/*
 		new webpack.DefinePlugin({
             // http://stackoverflow.com/a/35372706/2177568
