@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --hot --progress --host 0.0.0.0 --port 8000 --config webpack.client.config.js",
     "server-build": " webpack -p --progress --config webpack.server.config.js",
-    "client-build": " webpack -p --progress --config webpack.client.config.js",
+    "client-build": "cross-env NODE_ENV=production webpack -p --progress --config webpack.client.config.js",
     "start": "concurrently \"npm run client-build\" \"npm run server-build\" && node build/server.js"
   },
   "repository": {
@@ -42,6 +42,7 @@
     "webpack-dev-server": "^2.1.0-beta.3"
   },
   "dependencies": {
+    "cross-env": "^4.0.0",
     "express": "^4.14.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",

@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const node_env = process.env.NODE_ENV || 'dev';
+console.log("-------->",process.env.NODE_ENV);
 
 module.exports = {
 	devtool: node_env == 'prod' ? false : "#source-map",

@@ -17,7 +17,7 @@ module.exports = {
 
 System.import和require.ensure是一样的效果，前者是ES6特性，也是为了[按需加载](https://webpack.js.org/guides/code-splitting-import/#components/sidebar/sidebar.jsx)而生的！
 
-###2.我们在webpack.config.js中使用plugin来定义变量
+### 2.我们在webpack.config.js中使用plugin来定义变量
 
 ```js
 new webpack.DefinePlugin({
@@ -49,7 +49,7 @@ module.exports = {
 }
 ```
 
-###3.Server-Rendering的三个打包步骤
+### 3.Server-Rendering的三个打包步骤
 
 ```js
 "scripts": {
@@ -233,7 +233,6 @@ app.use((req, res) => {
 server.listen(PORT)
 ```
 
-
 ### 5.深入理解各个细节部分
 
 #### 5.1给出下面的例子：
@@ -330,7 +329,7 @@ const Reproduce = React.createClass({
 })
 ```
 
-如果某一个URL下的子组件实例化的时候要实例化多个组件，那么我们在父组件中进行处理，可以通过this.props来获取到！
+如果某一个URL下的子组件实例化的时候要实例化多个组件，那么我们在父组件中进行处理，可以通过this.props来获取到！这和配置一个component是一样的，后者是通过this.protps.children来获取，而前者是通过this.props.original而已(内部的Route是`子路由而已`)
 
 
 #### 5.3 从点击Link到视图改变的路径
@@ -414,3 +413,5 @@ module.exports = {
 参考资料：
 
 [深入理解 react-router 路由系统](http://web.jobbole.com/84418/)
+
+[react-router API](https://github.com/ReactTraining/react-router/blob/v3/docs/API.md)

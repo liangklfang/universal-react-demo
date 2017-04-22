@@ -7,6 +7,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // Create the favicon
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
+console.log("-------->",process.env.NODE_ENV);
+
 const node_env = process.env.NODE_ENV || 'dev';
 //在package.json中进行了配置
 module.exports = {
