@@ -24,6 +24,7 @@ app.use(express.static('build'))
 //const proxy = http_proxy.createProxyServer({ target: 'http://localhost:xxxx' })
 //app.use('/api', (req, res) => proxy.web(req, res))
 
+
 // React application rendering
 app.use((req, res) => {
 	// Match current URL to the corresponding React page

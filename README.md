@@ -15,7 +15,7 @@ module.exports = {
 }
 ```
 
-System.import和require.ensure是一样的效果，前者是ES6特性，也是为了[按需加载](https://webpack.js.org/guides/code-splitting-import/#components/sidebar/sidebar.jsx)而生的！
+System.import和require.ensure是一样的效果，前者是ES6特性，也是为了[按需加载](https://webpack.js.org/guides/code-splitting-import/#components/sidebar/sidebar.jsx)而生的！此时，对于服务端渲染来说，会根据request.url将About一起渲染成为html字符串然后返回给客户端，而此时客户端只需要加载该About组件单独打包成为的一个客户端chunk来注册事件，响应用户请求就可以了。这样，真正的达到了按需加载，同时结合服务端渲染，对于SEO和首屏加载都是有利的。
 
 ### 2.我们在webpack.config.js中使用plugin来定义变量
 
